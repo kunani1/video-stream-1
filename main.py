@@ -1,4 +1,12 @@
 import asyncio
+
+# Force event loop (required for pytgcalls on Heroku)
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
 from pytgcalls import idle
 from driver.veez import call_py, bot, user
 
