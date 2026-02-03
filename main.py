@@ -1,18 +1,27 @@
 import asyncio
+
+# Force event loop BEFORE pytgcalls import
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
 from pytgcalls import idle
 from driver.veez import call_py, bot, user
 
 
 async def start_bot():
     await bot.start()
-    print("[INFO]: BOT & UBOT CLIENT STARTED !!")
+    print("[INFO]: BOT & USER STARTED")
+
     await call_py.start()
-    print("[INFO]: PY-TGCALLS CLIENT STARTED !!")
-    await user.join_chat("VeezSupportGroup")
-    await user.join_chat("levinachannel")
+    print("[INFO]: PYTGCALLS STARTED")
+
     await idle()
-    print("[INFO]: STOPPING BOT & USERBOT")
+
+    print("[INFO]: STOPPING BOT")
     await bot.stop()
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
+
+if __name__ == "__main__":
+    asyncio.run(start_bot())
