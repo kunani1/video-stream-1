@@ -1,8 +1,7 @@
-pyrogram==2.0.106
+pyrogram==2.0.83
 tgcrypto
-
-# PyTgCalls + tgcalls from GitHub (THIS IS THE FIX)
 git+https://github.com/pytgcalls/pytgcalls.git
+
 
 ffmpeg-python
 yt-dlp
