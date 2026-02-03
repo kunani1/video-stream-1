@@ -1,6 +1,8 @@
 pyrogram==2.0.106
 tgcrypto
+
 pytgcalls==3.0.0.dev24
+tgcalls==3.0.0.dev24
 
 ffmpeg-python
 yt-dlp
@@ -12,7 +14,6 @@ speedtest-cli
 python-dotenv
 dnspython
 gitpython
-
 aiofiles
 aiohttp
 requests
